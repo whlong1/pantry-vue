@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref } from 'vue'
 
@@ -6,6 +7,7 @@ defineProps({
 })
 
 const count = ref(0)
+
 </script>
 
 <template>
@@ -32,6 +34,7 @@ const count = ref(0)
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
+
 
 <style scoped>
 .read-the-docs {
