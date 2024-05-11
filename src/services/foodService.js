@@ -6,7 +6,7 @@ const createFood = async (imageUrl) => {
     const res = await fetch(`${BASE_URL}`, {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${tokenService.getToken()}`,
+        Authorization: `Bearer ${tokenService.getToken()}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ imageUrl }),
@@ -17,7 +17,15 @@ const createFood = async (imageUrl) => {
   }
 };
 
-
-export { 
-  createFood,
+const getUserFoodItems = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/user`, {
+      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+    });
+    return await res.json();
+  } catch (error) {
+    console.log("Error:", error);
+  }
 };
+
+export { createFood, getUserFoodItems };
