@@ -5,6 +5,9 @@ import Home from "../pages/Home.vue";
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
 import Dashboard from "../pages/Dashboard.vue";
+import UploadPhoto from "../components/UploadPhoto.vue";
+import Pantry from "../components/Pantry.vue";
+import Landing from "../components/Landing.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -18,7 +21,13 @@ const router = createRouter({
       path: "/dashboard",
       component: Dashboard,
       meta: { requiresAuth: true },
+      children: [
+        { path: '', name: 'dashboard', component: Landing },
+        { path: "upload", component: UploadPhoto },
+        { path: "pantry", component: Pantry },
+      ],
     },
+    
   ],
 });
 
