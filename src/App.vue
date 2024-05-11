@@ -2,10 +2,14 @@
 import { onMounted } from 'vue';
 import { getToken } from './services/tokenService';
 import { auth } from './store/auth';
+import { pantry } from './store/pantry';
 
 onMounted(() => {
   const token = getToken();
-  if (token) auth.login(token);
+  if (token) {
+    auth.login(token);
+    pantry.setInitialPantry();
+  }
 });
 </script>
 
