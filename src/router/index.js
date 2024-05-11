@@ -4,7 +4,7 @@ import { auth } from "../store/auth";
 import Home from "../pages/Home.vue";
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
-import Profile from "../pages/Profile.vue";
+import Dashboard from "../pages/Dashboard.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,8 +15,8 @@ const router = createRouter({
     { path: "/login", component: Login },
     // Protected Routes:
     {
-      path: "/profile",
-      component: Profile,
+      path: "/dashboard",
+      component: Dashboard,
       meta: { requiresAuth: true },
     },
   ],

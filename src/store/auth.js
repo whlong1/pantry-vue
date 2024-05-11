@@ -10,7 +10,7 @@ export const auth = reactive({
   login(token){
     localStorage.setItem('token', token);
     this.setIsAuthenticated(true);
-    router.push('/profile'); 
+    router.push('/dashboard'); 
   },
   logout() {
     localStorage.removeItem("token");

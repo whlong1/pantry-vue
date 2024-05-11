@@ -20,7 +20,7 @@ onMounted(() => {
       </template>
       <!-- Protected Links -->
       <template v-if="auth.isAuthenticated">
-        <router-link to="/profile">Profile</router-link>
+        <router-link to="/dashboard">Dashboard</router-link>
         <button @click="auth.logout()">Logout</button>
       </template>
     </nav>
