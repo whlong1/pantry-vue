@@ -31,4 +31,20 @@ const uploadFileToS3Bucket = async (file, putUrl) => {
   return uploadResponse.ok;
 };
 
-export { generatePresignedPutURL, uploadFileToS3Bucket };
+const removeFromS3Bucket = async (photoId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${photoId}`, {
+      method: "DELETE",
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}` },
+    });
+    if (!res.ok) {
+      const errorMsg = await res.json();
+      throw new Error(JSON.stringify(errorMsg));
+    }
+    return await res.json();
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
+
+export { generatePresignedPutURL, uploadFileToS3Bucket, removeFromS3Bucket };
