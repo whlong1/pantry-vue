@@ -1,20 +1,11 @@
 <template>
   <h1>Dashboard</h1>
-  <ImageUploader />
+  <nav>
+    <router-link to="/dashboard/upload">Upload</router-link>
+    <router-link to="/dashboard/pantry">Pantry</router-link>
+  </nav>
+  <router-view></router-view>
 </template>
 
-<script>
-import ImageUploader from '../components/ImageUploader.vue';
-
-
-
-
-export default {
-  components: {
-    ImageUploader,
-
-  }
-}
-
-
+<script setup>
 </script>
