@@ -13,11 +13,11 @@
 :root {
   font-family: system-ui, Helvetica, Arial, sans-serif;
   line-height: 1;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   cursor: default;
   color-scheme: light dark;
-  --background-color: white;
+  background-color: white;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,4 +45,16 @@ main {
 
 button, a {
   cursor: pointer;
+}
+
+input {
+  background-color: none;
+}
+
+input:-internal-autofill-selected {
+  background-color: transparent;
+}
+
+*,*:focus,*:hover{
+  outline:none;
 }

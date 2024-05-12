@@ -5,7 +5,7 @@ export const auth = reactive({
   isAuthenticated: false,
   setIsAuthenticated(status) {
     this.isAuthenticated = status
-    console.log("Auth Status:", this.isAuthenticated)
+    console.log("Welcome back!")
   },
   login(token){
     localStorage.setItem('token', token);

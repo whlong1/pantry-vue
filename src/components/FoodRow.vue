@@ -6,7 +6,9 @@
     <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedCarbGramsPerServing }} grams</td>
     <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedProteinGramsPerServing }} grams</td>
     <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedServingSizeInGrams }} grams</td>
-    <td class="border-b overflow-hidden py-2 text-left" :title="food.possibleAllergens.join(', ')">{{food.possibleAllergens[0] }}</td>
+    <td class="border-b overflow-hidden py-2 text-left" :title="food.possibleAllergens.join(', ')">
+      {{ food.possibleAllergens.length ? food.possibleAllergens[0] : "None" }}
+    </td>
   </tr>
 </template>
 <script setup>

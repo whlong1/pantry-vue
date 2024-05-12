@@ -1,5 +1,4 @@
 import { reactive } from 'vue';
-import router from '../router';
 import * as foodService from '../services/foodService';
 
 export const pantry = reactive({

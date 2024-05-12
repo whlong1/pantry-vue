@@ -1,6 +1,6 @@
 <template>
   <header v-if="!recipe && !isLoading">
-    <h1 class="text-2xl font-bold mb-4 leading-none">Generate Recipe</h1>
+    <h1 class="text-2xl font-bold mb-4 leading-none text-gray-900">Generate Recipe</h1>
     <p class="font-medium text-gray-800 mt-0">
       {{ !recipeCategory ? "Select a recipe category" : `Generate ${recipeCategory} recipe?` }}
     </p>
@@ -28,10 +28,10 @@
   </section>
 
   <div v-if="isLoading" class="p-2 h-60 min-h-60 ml-1 w-full m-0 flex justify-center items-center">
-    <p class="text-1xl font-bold mb-4 leading-none">Loading</p>
+    <p class="text-1xl font-bold mb-4 leading-none text-gray-900">Loading</p>
   </div>
 
-  <section v-if="recipe && !isLoading">
+  <section v-if="recipe && !isLoading" class="text-gray-800">
     <SingleRecipe :recipe="recipe" />
     <button @click="handleReset" class="text-white bg-red-500 hover:bg-red-600 rounded-sm text-sm px-6 py-2 mt-4 font-bold box-border">
       Reset
