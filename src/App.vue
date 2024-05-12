@@ -13,26 +13,44 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col h-full">
-    <nav class="flex-none w-full p-4 text-sm font-medium items-center justify-between border-b border-gray-700">
-      <router-link to="/">Home</router-link>
-      <!-- Public Links -->
-      <template v-if="!auth.isAuthenticated">
-        <router-link to="/login">Login</router-link>
-        <router-link to="/register">Register</router-link>
-      </template>
-      <!-- Protected Links -->
-      <template v-if="auth.isAuthenticated">
-        <router-link to="/dashboard">Dashboard</router-link>
-        <button @click="auth.logout()">Logout</button>
-      </template>
+    <nav class="border-b border-gray-200 p-4 text-gray-800">
+      <ul class="flex flex-row items-center p-0 text-sm leading-none font-medium	">
+        <li class="m-0 mr-4">
+          <img class="w-8" src="./assets/logo.svg" alt="App logo">
+        </li>
+        <li class="m-0 hover:underline mr-4">
+          <router-link to="/">Home</router-link>
+        </li>
+        <!-- Public Links -->
+        <template v-if="!auth.isAuthenticated">
+          <li class="m-0 hover:underline mr-4">
+            <router-link to="/login">Login</router-link>
+          </li>
+          <li class="m-0 hover:underline">
+            <router-link to="/register">Register</router-link>
+          </li>
+        </template>
+        <!-- Protected Links -->
+        <template v-if="auth.isAuthenticated">
+          <li class="m-0 hover:underline mr-4">
+            <router-link to="/dashboard">Dashboard</router-link>
+          </li>
+          <li class="m-0 hover:underline ml-auto">
+            <button @click="auth.logout()">Logout</button>
+          </li>
+        </template>
+
+      </ul>
     </nav>
 
-    <main class="p-4">
+    <main>
       <router-view></router-view>
     </main>
 
-    <footer class="flex-none p-4 border-t border-gray-700">
-      Footer
+    <footer class="flex justify-center items-center p-2 border-t border-gray-200">
+      <p class="text-xs text-gray-600">
+        © 2024 Pantry. All rights reserved
+      </p>
     </footer>
   </div>
 </template>

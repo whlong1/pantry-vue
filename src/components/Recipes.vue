@@ -30,10 +30,10 @@ const handleSubmit = async () => {
   try {
     isLoading.value = true;
     const recipeData = await recipeService.generateRecipe(prompt.value);
-
     prompt.value = null;
     isLoading.value = false;
     recipeState.value = recipeData;
+
   } catch (error) {
     console.error("Error:", error);
   }
