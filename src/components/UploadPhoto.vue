@@ -1,10 +1,10 @@
 <template>
-  <h2>Upload Photo</h2>
+  <h2 class="text-2xl font-bold mb-4">Upload</h2>
   <div v-if="!isLoading && !uploadSuccess">
     <label @dragover.prevent @drop.prevent="handleDropOrSelect"
       class="border-2 border-dashed border-gray-300 p-5 text-center cursor-pointer block">
       Drop an image here or click to select
-      <input type="file" accept="image/*" @change="handleDropOrSelect" />
+      <input type="file" accept="image/*" @change="handleDropOrSelect" hidden />
     </label>
     <div v-if="imageUrl" class="mt-2.5">
       <img :src="imageUrl" alt="Preview" class="w-40">

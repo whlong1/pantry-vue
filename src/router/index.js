@@ -8,6 +8,7 @@ import Dashboard from "../pages/Dashboard.vue";
 import UploadPhoto from "../components/UploadPhoto.vue";
 import Pantry from "../components/Pantry.vue";
 import Landing from "../components/Landing.vue";
+import Recipes from "../components/Recipes.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,6 +26,7 @@ const router = createRouter({
         { path: '', name: 'dashboard', component: Landing },
         { path: "upload", component: UploadPhoto },
         { path: "pantry", component: Pantry },
+        { path: "recipes", component: Recipes },
       ],
     },
     

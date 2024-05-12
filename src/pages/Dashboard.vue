@@ -1,10 +1,15 @@
 <template>
-  <h1>Dashboard</h1>
-  <nav>
-    <router-link to="/dashboard/upload">Upload</router-link>
-    <router-link to="/dashboard/pantry">Pantry</router-link>
-  </nav>
-  <router-view></router-view>
+  <div class="flex flex-row">
+    <nav class="flex flex-col border-r border-gray-700">
+      <h1>Dashboard</h1>
+      <router-link to="/dashboard/upload">Upload</router-link>
+      <router-link to="/dashboard/pantry">Pantry</router-link>
+      <router-link to="/dashboard/recipes">Recipes</router-link>
+    </nav>
+    <section class="flex flex-col">
+      <router-view></router-view>
+    </section>
+  </div>
 </template>
 
 <script setup>

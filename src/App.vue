@@ -12,7 +12,6 @@ onMounted(() => {
 </script>
 
 <template>
-  {{auth.isAuthenticated}}
   <div class="flex flex-col h-full">
     <nav class="flex-none w-full p-4 text-sm font-medium items-center justify-between border-b border-gray-700">
       <router-link to="/">Home</router-link>

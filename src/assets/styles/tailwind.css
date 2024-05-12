@@ -23,6 +23,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: default;
 }
 
 html, body {
@@ -43,4 +44,8 @@ main {
   flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+button, a {
+  cursor: pointer;
 }
