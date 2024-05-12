@@ -2,18 +2,17 @@
 import { onMounted } from 'vue';
 import { getToken } from './services/tokenService';
 import { auth } from './store/auth';
-import { pantry } from './store/pantry';
 
 onMounted(() => {
   const token = getToken();
   if (token) {
     auth.login(token);
-    pantry.setInitialPantry();
   }
 });
 </script>
 
 <template>
+  {{auth.isAuthenticated}}
   <div class="flex flex-col h-full">
     <nav class="flex-none w-full p-4 text-sm font-medium items-center justify-between border-b border-gray-700">
       <router-link to="/">Home</router-link>

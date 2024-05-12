@@ -6,7 +6,6 @@ export const pantry = reactive({
   foodItems: [],
   async setInitialPantry() {
     const foodItemData = await foodService.getUserFoodItems();
-    console.log(foodItemData)
     this.foodItems = foodItemData;
   }
 });

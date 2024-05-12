@@ -8,4 +8,13 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { getToken } from '../services/tokenService';
+import { pantry } from '../store/pantry';
+onMounted(() => {
+  const token = getToken();
+  if (token) {
+    pantry.setInitialPantry();
+  }
+});
 </script>

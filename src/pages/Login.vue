@@ -17,7 +17,6 @@
 
 <script>
 const BASE_URL = `${import.meta.env.VITE_SERVERLESS_URL}/login`;
-console.log(BASE_URL)
 import { auth } from '../store/auth';
 
 export default {
