@@ -1,9 +1,9 @@
 <template>
-  <h2 class="text-2xl font-bold mb-4">Pantry</h2>
+  <h1 class="text-2xl font-bold mb-4 leading-none">My Pantry</h1>
   <table class="w-full table-fixed">
     <thead>
-      <tr class="border-gray-700 border-b">
-        <th scope="col" class="text-left py-2 w-64">Name</th>
+      <tr class="border-gray-200 border-b text-xs font-semibold">
+        <th scope="col" class="text-left py-2 w-56 pr-6">Name</th>
         <th scope="col" class="text-left py-2 w-auto">Calories</th>
         <th scope="col" class="text-left py-2 w-auto">Fat</th>
         <th scope="col" class="text-left py-2 w-auto">Carbs</th>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <FoodRow v-for="food in pantry.foodItems" :key="food.id" :food="food" />
+      <FoodRow v-for="(food, index) in pantry.foodItems" :key="food.id" :food="food" :index="index" />
     </tbody>
   </table>
 </template>

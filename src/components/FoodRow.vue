@@ -1,16 +1,15 @@
 <template>
-  <tr class="">
-    <td class="border-gray-700	 border-b overflow-hidden py-2 whitespace-nowrap text-ellipsis pr-12">{{ food.name }}</td>
-
-    <td class="border-gray-700	 border-b overflow-hidden py-2">{{ food.estimatedCaloriesPerServing }} grams</td>
-    <td class="border-gray-700	 border-b overflow-hidden py-2">{{ food.estimatedFatGramsPerServing }} grams</td>
-    <td class="border-gray-700	 border-b overflow-hidden py-2">{{ food.estimatedCarbGramsPerServing }} grams</td>
-    <td class="border-gray-700	 border-b overflow-hidden py-2">{{ food.estimatedProteinGramsPerServing }} grams</td>
-    <td class="border-gray-700	 border-b overflow-hidden py-2">{{ food.estimatedServingSizeInGrams }} grams</td>
-
-    <td class="border-gray-700	 border-b overflow-hidden py-2 whitespace-nowrap text-ellipsis">{{ food.possibleAllergens.join(', ') }}</td>
+  <tr class="border-gray-200 border-b text-xs font-regular">
+    <td class="border-b overflow-hidden py-2 font-medium w-48">{{ truncatedFoodName }}</td>
+    <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedCaloriesPerServing }} grams</td>
+    <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedFatGramsPerServing }} grams</td>
+    <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedCarbGramsPerServing }} grams</td>
+    <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedProteinGramsPerServing }} grams</td>
+    <td class="border-b overflow-hidden py-2 text-left">{{ food.estimatedServingSizeInGrams }} grams</td>
+    <td class="border-b overflow-hidden py-2 text-left" :title="food.possibleAllergens.join(', ')">{{food.possibleAllergens[0] }}</td>
   </tr>
 </template>
 <script setup>
-const { food } = defineProps({ food: Object })
+const { food, index } = defineProps(["food", "index"]);
+const truncatedFoodName = food.name.length > 36 ? food.name.substring(0, 34) + '...' : food.name;
 </script>
